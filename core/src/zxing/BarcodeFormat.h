@@ -54,7 +54,7 @@ public:
   const Value value;
   operator Value () const {return value;}
 
-  static LIBZXING_EXPORT char const* barcodeFormatNames[];
+  static ZXING_EXPORT char const* barcodeFormatNames[];
 };
 
 }

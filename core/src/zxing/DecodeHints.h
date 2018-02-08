@@ -36,34 +36,34 @@ class DecodeHints {
   Ref<ResultPointCallback> callback;
 
  public:
-  static LIBZXING_EXPORT const DecodeHintType AZTEC_HINT = 1 << BarcodeFormat::AZTEC;
-  static LIBZXING_EXPORT const DecodeHintType CODABAR_HINT = 1 << BarcodeFormat::CODABAR;
-  static LIBZXING_EXPORT const DecodeHintType CODE_39_HINT = 1 << BarcodeFormat::CODE_39;
-  static LIBZXING_EXPORT const DecodeHintType CODE_93_HINT = 1 << BarcodeFormat::CODE_93;
-  static LIBZXING_EXPORT const DecodeHintType CODE_128_HINT = 1 << BarcodeFormat::CODE_128;
-  static LIBZXING_EXPORT const DecodeHintType DATA_MATRIX_HINT = 1 << BarcodeFormat::DATA_MATRIX;
-  static LIBZXING_EXPORT const DecodeHintType EAN_8_HINT = 1 << BarcodeFormat::EAN_8;
-  static LIBZXING_EXPORT const DecodeHintType EAN_13_HINT = 1 << BarcodeFormat::EAN_13;
-  static LIBZXING_EXPORT const DecodeHintType ITF_HINT = 1 << BarcodeFormat::ITF;
-  static LIBZXING_EXPORT const DecodeHintType MAXICODE_HINT = 1 << BarcodeFormat::MAXICODE;
-  static LIBZXING_EXPORT const DecodeHintType PDF_417_HINT = 1 << BarcodeFormat::PDF_417;
-  static LIBZXING_EXPORT const DecodeHintType QR_CODE_HINT = 1 << BarcodeFormat::QR_CODE;
-  static LIBZXING_EXPORT const DecodeHintType RSS_14_HINT = 1 << BarcodeFormat::RSS_14;
-  static LIBZXING_EXPORT const DecodeHintType RSS_EXPANDED_HINT = 1 << BarcodeFormat::RSS_EXPANDED;
-  static LIBZXING_EXPORT const DecodeHintType UPC_A_HINT = 1 << BarcodeFormat::UPC_A;
-  static LIBZXING_EXPORT const DecodeHintType UPC_E_HINT = 1 << BarcodeFormat::UPC_E;
-  static LIBZXING_EXPORT const DecodeHintType UPC_EAN_EXTENSION_HINT = 1 << BarcodeFormat::UPC_EAN_EXTENSION;
+  static ZXING_EXPORT const DecodeHintType AZTEC_HINT = 1 << BarcodeFormat::AZTEC;
+  static ZXING_EXPORT const DecodeHintType CODABAR_HINT = 1 << BarcodeFormat::CODABAR;
+  static ZXING_EXPORT const DecodeHintType CODE_39_HINT = 1 << BarcodeFormat::CODE_39;
+  static ZXING_EXPORT const DecodeHintType CODE_93_HINT = 1 << BarcodeFormat::CODE_93;
+  static ZXING_EXPORT const DecodeHintType CODE_128_HINT = 1 << BarcodeFormat::CODE_128;
+  static ZXING_EXPORT const DecodeHintType DATA_MATRIX_HINT = 1 << BarcodeFormat::DATA_MATRIX;
+  static ZXING_EXPORT const DecodeHintType EAN_8_HINT = 1 << BarcodeFormat::EAN_8;
+  static ZXING_EXPORT const DecodeHintType EAN_13_HINT = 1 << BarcodeFormat::EAN_13;
+  static ZXING_EXPORT const DecodeHintType ITF_HINT = 1 << BarcodeFormat::ITF;
+  static ZXING_EXPORT const DecodeHintType MAXICODE_HINT = 1 << BarcodeFormat::MAXICODE;
+  static ZXING_EXPORT const DecodeHintType PDF_417_HINT = 1 << BarcodeFormat::PDF_417;
+  static ZXING_EXPORT const DecodeHintType QR_CODE_HINT = 1 << BarcodeFormat::QR_CODE;
+  static ZXING_EXPORT const DecodeHintType RSS_14_HINT = 1 << BarcodeFormat::RSS_14;
+  static ZXING_EXPORT const DecodeHintType RSS_EXPANDED_HINT = 1 << BarcodeFormat::RSS_EXPANDED;
+  static ZXING_EXPORT const DecodeHintType UPC_A_HINT = 1 << BarcodeFormat::UPC_A;
+  static ZXING_EXPORT const DecodeHintType UPC_E_HINT = 1 << BarcodeFormat::UPC_E;
+  static ZXING_EXPORT const DecodeHintType UPC_EAN_EXTENSION_HINT = 1 << BarcodeFormat::UPC_EAN_EXTENSION;
 
-  static LIBZXING_EXPORT const DecodeHintType TRYHARDER_HINT = 1 << 31;
-  static LIBZXING_EXPORT const DecodeHintType CHARACTER_SET = 1 << 30;
-  // static LIBZXING_EXPORT const DecodeHintType ALLOWED_LENGTHS = 1 << 29;
-  // static LIBZXING_EXPORT const DecodeHintType ASSUME_CODE_39_CHECK_DIGIT = 1 << 28;
-  static LIBZXING_EXPORT const DecodeHintType  ASSUME_GS1 = 1 << 27;
-  // static LIBZXING_EXPORT const DecodeHintType NEED_RESULT_POINT_CALLBACK = 1 << 26;
+  static ZXING_EXPORT const DecodeHintType TRYHARDER_HINT = 1 << 31;
+  static ZXING_EXPORT const DecodeHintType CHARACTER_SET = 1 << 30;
+  // static ZXING_EXPORT const DecodeHintType ALLOWED_LENGTHS = 1 << 29;
+  // static ZXING_EXPORT const DecodeHintType ASSUME_CODE_39_CHECK_DIGIT = 1 << 28;
+  static ZXING_EXPORT const DecodeHintType  ASSUME_GS1 = 1 << 27;
+  // static ZXING_EXPORT const DecodeHintType NEED_RESULT_POINT_CALLBACK = 1 << 26;
 
-  static LIBZXING_EXPORT const DecodeHints PRODUCT_HINT;
-  static LIBZXING_EXPORT const DecodeHints ONED_HINT;
-  static LIBZXING_EXPORT const DecodeHints DEFAULT_HINT;
+  static ZXING_EXPORT const DecodeHints PRODUCT_HINT;
+  static ZXING_EXPORT const DecodeHints ONED_HINT;
+  static ZXING_EXPORT const DecodeHints DEFAULT_HINT;
 
   DecodeHints();
   DecodeHints(DecodeHintType init);

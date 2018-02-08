@@ -57,12 +57,11 @@ if(OpenCV_FOUND)
 endif()
 
 include_directories(core/src)
-add_library(libzxing SHARED ${LIBZXING_FILES})
-set_target_properties(libzxing PROPERTIES PREFIX "")
+add_library(zxing SHARED ${LIBZXING_FILES})
 
 include(GenerateExportHeader)
-generate_export_header(libzxing EXPORT_FILE_NAME ${CMAKE_BINARY_DIR}/zxing_export.h)
-target_include_directories(libzxing PUBLIC
+generate_export_header(zxing EXPORT_FILE_NAME ${CMAKE_BINARY_DIR}/zxing_export.h)
+target_include_directories(zxing PUBLIC
     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
     $<INSTALL_INTERFACE:include>
 )
@@ -70,7 +69,7 @@ target_include_directories(libzxing PUBLIC
 find_package(Iconv QUIET)
 if(ICONV_FOUND)
     include_directories(${ICONV_INCLUDE_DIR})
-    target_link_libraries(libzxing ${ICONV_LIBRARIES})
+    target_link_libraries(zxing ${ICONV_LIBRARIES})
 else()
     add_definitions(-DNO_ICONV=1)
 endif()
@@ -82,7 +81,7 @@ if(OpenCV_FOUND)
         "./opencv-cli/src/*.h"
     )
     add_executable(zxing-cv ${OPENCV_ZXING_FILES})
-    target_link_libraries(zxing-cv libzxing ${OpenCV_LIBRARIES})
+    target_link_libraries(zxing-cv zxing ${OpenCV_LIBRARIES})
 endif()
 
 # Add cli executable.
@@ -91,13 +90,13 @@ file(GLOB_RECURSE ZXING_FILES
     "./cli/src/*.h"
 )
 
-add_executable(zxing ${ZXING_FILES})
-target_link_libraries(zxing libzxing)
+add_executable(zxing-cli ${ZXING_FILES})
+target_link_libraries(zxing-cli zxing)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/zxing_export.h
     DESTINATION include
 )
-install(TARGETS zxing libzxing EXPORT zxing-targets
+install(TARGETS zxing-cli zxing EXPORT zxing-targets
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
     ARCHIVE DESTINATION lib
@@ -124,6 +123,6 @@ if(BUILD_TESTING)
         )
         add_executable(testrunner ${TESTRUNNER_FILES})
         include_directories(${CPPUNIT_INCLUDE_DIR})
-        target_link_libraries(testrunner libzxing  ${CPPUNIT_LIBRARIES})
+        target_link_libraries(testrunner zxing  ${CPPUNIT_LIBRARIES})
     endif()
 endif()
