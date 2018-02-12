@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(zxing)
 
 option(BUILD_TESTING "Enable generation of test targets" OFF)
+option(WITH_OPENCV   "Enable OpenCV bridge"              ON)
 
 set(CMAKE_LIBRARY_PATH /opt/local/lib ${CMAKE_LIBRARY_PATH})
 
@@ -44,16 +45,18 @@ if(WIN32)
     endif()
 endif()
 
-# OpenCV classes
-find_package(OpenCV QUIET)
-if(OpenCV_FOUND)
-    list(APPEND LIBZXING_FILES
-        opencv/src/zxing/MatSource.cpp
-        opencv/src/zxing/MatSource.h
-    )
+if(WITH_OPENCV)
+    # OpenCV classes
+    find_package(OpenCV QUIET)
+    if(OpenCV_FOUND)
+        list(APPEND LIBZXING_FILES
+            opencv/src/zxing/MatSource.cpp
+            opencv/src/zxing/MatSource.h
+        )
 
-    include_directories(${OpenCV_INCLUDE_DIRS})
-    include_directories(opencv/src)
+        include_directories(${OpenCV_INCLUDE_DIRS})
+        include_directories(opencv/src)
+    endif()
 endif()
 
 include_directories(core/src)

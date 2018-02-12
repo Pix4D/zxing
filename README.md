@@ -41,6 +41,7 @@ You can switch between build modes by specifying:
 # OpenCV integration
 
 When build on a system where opencv is installed the open cv bridge classes and executable will be built too.
+This can be deactivated with `-DWITH_OPENCV=OFF`.
 
 # Development tips
 
