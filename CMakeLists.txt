@@ -93,13 +93,10 @@ file(GLOB_RECURSE ZXING_FILES
     "./cli/src/*.h"
 )
 
-add_executable(zxing-cli ${ZXING_FILES})
-target_link_libraries(zxing-cli zxing)
-
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/zxing_export.h
     DESTINATION include
 )
-install(TARGETS zxing-cli zxing EXPORT zxing-targets
+install(TARGETS zxing EXPORT zxing-targets
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
     ARCHIVE DESTINATION lib
