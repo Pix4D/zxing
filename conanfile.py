@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 class ZxingConan(ConanFile):
     name = 'zxing'
     lib_version = '3.3.3'
-    revision = '2'
+    revision = '3'
     version = '{}-{}'.format(lib_version, revision)
     settings = 'os', 'compiler', 'build_type', 'arch'
     description = 'Zxing recipe'
