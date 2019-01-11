@@ -69,13 +69,7 @@ target_include_directories(zxing PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-find_package(Iconv QUIET)
-if(ICONV_FOUND)
-    include_directories(${ICONV_INCLUDE_DIR})
-    target_link_libraries(zxing ${ICONV_LIBRARIES})
-else()
-    add_definitions(-DNO_ICONV=1)
-endif()
+add_definitions(-DNO_ICONV=1)
 
 # Add OpenCV cli executable
 if(OpenCV_FOUND)
