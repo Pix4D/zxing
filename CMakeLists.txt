@@ -5,6 +5,16 @@ project(zxing)
 option(BUILD_TESTING "Enable generation of test targets" OFF)
 option(WITH_OPENCV   "Enable OpenCV bridge"              ON)
 
+include(${CMAKE_BINARY_DIR}/../conanbuildinfo.cmake)
+conan_basic_setup(KEEP_RPATHS)
+
+set(CMAKE_MACOSX_RPATH ON)
+if(UNIX AND NOT APPLE)
+    set(CMAKE_INSTALL_RPATH "$ORIGIN")
+elseif(APPLE)
+    set(CMAKE_INSTALL_RPATH "@loader_path")
+endif()
+
 set(CMAKE_LIBRARY_PATH /opt/local/lib ${CMAKE_LIBRARY_PATH})
 
 # Check for polluted source tree.
