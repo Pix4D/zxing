@@ -4,18 +4,14 @@ from conans import ConanFile, CMake, tools
 class ZxingConan(ConanFile):
     name = 'zxing'
     lib_version = '3.3.3'
-    revision = '6'
+    revision = '7'
     version = '{}-{}'.format(lib_version, revision)
     settings = 'os', 'compiler', 'build_type', 'arch'
     description = 'Zxing recipe'
     url = 'git@bitbucket.org:pix4d/zxing.git'
     license = 'GNU LESSER GENERAL PUBLIC LICENSE'
     generators = 'cmake'
-    scm = {
-        'type': 'git',
-        'revision': 'auto',
-        'url': 'auto',
-    }
+    exports_sources = ('CMakeLists.txt', 'source_files.cmake', 'cmake/*', 'core/*')
 
     def build(self):
         cmake_args = {
